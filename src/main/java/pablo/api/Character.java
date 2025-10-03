@@ -1,8 +1,11 @@
 package pablo.api;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Character {
 
 	@JsonProperty("image")
@@ -100,7 +103,7 @@ public class Character {
 			",origin = '" + origin + '\'' + 
 			",name = '" + name + '\'' + 
 			",location = '" + location + '\'' + 
-			",episode = '" + episode + '\'' + 
+			",episode = '" + episode + '\'' +
 			",id = '" + id + '\'' + 
 			",type = '" + type + '\'' + 
 			",url = '" + url + '\'' + 

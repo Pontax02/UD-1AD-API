@@ -1,7 +1,9 @@
 package pablo.api;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreType
 public class Info{
 
 	@JsonProperty("next")
