@@ -1,0 +1,65 @@
+# Ignora los archivos generados por el IDE
+*.class
+*.log
+*.ctxt
+*.launch
+*.settings/
+*.project
+*.classpath
+*.idea
+*.iml
+*.vscode/
+*.swp
+
+# Ignora los archivos generados por Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Ignora los archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignora los archivos de logs y salida
+*.log
+*.out
+
+# Ignora los archivos de prueba y cobertura
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+coverage/
+*.ser
+
+# Ignora los archivos de dependencias y librerias
+lib/
+*.lib
+*.dll
+
+# Ignora los archivos de configuración local
+*.properties
+*.env
+*.cfg
+*.config
+
+# Ignora los archivos de usuario
+*.bak
+*.tmp
+*.temp
+*.orig
+*.rej
+*.swo
+*.swp
+*~
+.*.swp
