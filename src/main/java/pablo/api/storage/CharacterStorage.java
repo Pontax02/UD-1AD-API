@@ -15,20 +15,24 @@ public class CharacterStorage {
     public List<Character> getAllCharacters() throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        int page = 1;
+        int page = 0;
         URL link = new URL("https://rickandmortyapi.com/api/character?page=" + page);
 
-        List<Character> characters = new ArrayList<>();
+
         while (page < 42) {
             try {
-                characters.add(objectMapper.readValue(link, Character.class));
-                page++;
+                ++page;
+                Response response = objectMapper.readValue(link, Response.class);
+
+
+                return response.getResults();
+
             }
             catch (NullPointerException e) {
                 System.out.println(e.getMessage());
             }
         }
-        return characters;
+        return List.of();
     }
 
 
