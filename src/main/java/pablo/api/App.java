@@ -3,12 +3,10 @@ package pablo.api;
 
 import pablo.api.storage.CharacterStorage;
 
-import java.io.CharArrayReader;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 public class App {
     public static void main(String[] args) throws IOException {
@@ -20,8 +18,8 @@ public class App {
         List<Character> characterList = characters.getAllCharacters();
 
 
-
-        System.out.println(characterList.stream().toList());
+        System.out.println(characterList.size());
+        System.out.println(characterList.stream().collect(Collectors.groupingBy(Character::getName, Collectors.counting())));
 
 
 

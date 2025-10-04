@@ -2,6 +2,7 @@ package pablo.api;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -29,6 +30,7 @@ public class Character {
 	@JsonProperty("location")
 	private Location location;
 
+	@JsonIgnore
 	@JsonProperty("episode")
 	private List<String> episode;
 

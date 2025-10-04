@@ -17,16 +17,18 @@ public class CharacterStorage {
 
         ObjectMapper objectMapper = new ObjectMapper();
         int page = 1;
-        URL link = new URL("https://rickandmortyapi.com/api/character?page=" + page);
+
 
         List<Character> characters = new ArrayList<>();
         while (page < 43) {
             try {
-
+                URL link = new URL(String.format("https://rickandmortyapi.com/api/character?page=%d", page));
                 Response response = objectMapper.readValue(link, Response.class);
                 List<Character> group = response.getResults();
                 for( Character i : group){
                     characters.add(i);
+
+
                 }
                 page++;
             }
