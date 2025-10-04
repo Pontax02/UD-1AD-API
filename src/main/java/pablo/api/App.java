@@ -5,7 +5,9 @@ import pablo.api.storage.CharacterStorage;
 
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class App {
@@ -17,11 +19,21 @@ public class App {
 
         List<Character> characterList = characters.getAllCharacters();
 
-
+        System.out.println(characterList.stream().collect(Collectors.groupingBy(Character::getName,Collectors.counting())));
         System.out.println(characterList.size());
-        System.out.println(characterList.stream().collect(Collectors.groupingBy(Character::getName, Collectors.counting())));
+        Map<Integer, List<Object[]>> resultado = characterList.stream()
+                .collect(Collectors.groupingBy(
+                        Character::getId,
+                        Collectors.mapping(
+                                ch -> new Object[]{ch.getName(), ch.getStatus(), ch.getImage()},
+                                Collectors.toList()
+                        )
+                ));
 
-
+        resultado.forEach((id, arrays) -> {
+            System.out.println("ID " + id + ":");
+            arrays.forEach(arr -> System.out.println(Arrays.toString(arr)));
+        });
 
 
     }
