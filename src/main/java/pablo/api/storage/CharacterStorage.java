@@ -6,33 +6,34 @@ import pablo.api.Response;
 
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterStorage {
 
-    public List<Character> getAllCharacters() throws IOException {
+    public List<Character> getAllCharacters() throws MalformedURLException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         int page = 0;
         URL link = new URL("https://rickandmortyapi.com/api/character?page=" + page);
 
-
+        List<Character> characters = new ArrayList<>();
         while (page < 42) {
             try {
                 ++page;
                 Response response = objectMapper.readValue(link, Response.class);
-
-
-                return response.getResults();
-
+                List<Character> group = response.getResults();
+                for( Character i : group){
+                    characters.add(i);
+                }
             }
-            catch (NullPointerException e) {
+            catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         }
-        return List.of();
+        return characters;
     }
 
 

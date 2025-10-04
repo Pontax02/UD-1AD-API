@@ -19,9 +19,9 @@ public class App {
 
         List<Character> characterList = characters.getAllCharacters();
 
-        List test = characterList.stream().collect(Collectors.groupingBy(Character::getName)).entrySet().stream().toList();
 
-        System.out.println(test.size());
+
+        System.out.println(characterList.size());
 
 
 
