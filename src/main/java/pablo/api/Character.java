@@ -95,13 +95,12 @@ public class Character {
 	@Override
  	public String toString(){
 		return 
-			"ResultsItem{" + 
-			"image = '" + image + '\'' + 
+			"name = '" + name + '\'' +
+			"image = '" + image + '\'' +
 			",gender = '" + gender + '\'' + 
 			",species = '" + species + '\'' + 
 			",created = '" + created + '\'' + 
-			",origin = '" + origin + '\'' + 
-			",name = '" + name + '\'' + 
+			",origin = '" + origin + '\'' +
 			",location = '" + location + '\'' + 
 			",episode = '" + episode + '\'' +
 			",id = '" + id + '\'' + 

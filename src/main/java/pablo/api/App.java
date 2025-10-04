@@ -21,7 +21,7 @@ public class App {
 
 
 
-        System.out.println(characterList.size());
+        System.out.println(characterList.stream().toList());
 
 
 

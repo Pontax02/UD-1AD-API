@@ -16,18 +16,19 @@ public class CharacterStorage {
     public List<Character> getAllCharacters() throws MalformedURLException {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        int page = 0;
+        int page = 1;
         URL link = new URL("https://rickandmortyapi.com/api/character?page=" + page);
 
         List<Character> characters = new ArrayList<>();
-        while (page < 42) {
+        while (page < 43) {
             try {
-                ++page;
+
                 Response response = objectMapper.readValue(link, Response.class);
                 List<Character> group = response.getResults();
                 for( Character i : group){
                     characters.add(i);
                 }
+                page++;
             }
             catch (IOException e) {
                 System.out.println(e.getMessage());
