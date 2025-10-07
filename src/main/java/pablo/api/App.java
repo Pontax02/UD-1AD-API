@@ -36,5 +36,17 @@ public class App {
         });
 
 
+
+
+        System.out.println();
+        System.out.println("obtener por Origen");
+
+        System.out.println(characters.getCharactersOrigin("Earth").stream().toList());
+
+
+        System.out.println();
+        System.out.println("obtener por genero");
+
+        System.out.println(characters.getCharactersbyGender("Female").stream().toList());
     }
 }
